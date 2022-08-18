@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_window.h                                         :+:      :+:    :+:   */
+/*   sfe_window_put_scene.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 11:20:34 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 14:27:56 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/18 14:23:26 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/18 14:29:55 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_WINDOW_H
-# define T_WINDOW_H
+#include "sfe_window.h"
 
-# include "ft_point.h"
-# include "t_img.h"
-
-typedef struct s_window
+t_bool	sfe_window_put_scene(t_window win, t_scene scene)
 {
-	void		*mlx_ptr;
-	void		*win_ptr;
-	const char	*name;
-	t_point		size;
-	t_img		img;
-}	t_window;
-
-#endif
+	return (sfe_window_put_image(win, scene.img, new_point(0, 0)));
+}

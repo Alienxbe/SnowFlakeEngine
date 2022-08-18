@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 06:14:52 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:57:12 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/18 14:28:57 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_window	sfe_window_new(void *mlx_ptr, t_point size, char *name, int (*f)())
 
 	if (!mlx_ptr)
 		return ((t_window){0});
+	win.mlx_ptr = mlx_ptr;
 	win.win_ptr = mlx_new_window(mlx_ptr, size.x, size.y, name);
 	if (!win.win_ptr)
 		return ((t_window){0});

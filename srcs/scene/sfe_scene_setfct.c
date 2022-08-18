@@ -6,13 +6,13 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 13:00:38 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 13:02:58 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/18 14:15:09 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sfe_scene.h"
 
-t_bool	sfe_scene_setfct(t_scene *scene, int (*f_init)(), int (*f_update)(),
+void	sfe_scene_setfct(t_scene *scene, int (*f_init)(), int (*f_update)(),
 			void *param)
 {
 	scene->f_init = f_init;

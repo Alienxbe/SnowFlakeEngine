@@ -6,13 +6,13 @@
 #    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2022/08/18 12:38:46 by mykman           ###   ########.fr        #
+#    Updated: 2022/08/18 14:31:42 by mykman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compilation
 CC				:=	@gcc
-CFLAGS			:=	-Wall -Wextra -Werror -fsanitize=address
+CFLAGS			:=	-Wall -Wextra -Werror
 
 # Colors
 RED				:=	[38;5;9m
@@ -47,11 +47,15 @@ SRCS_IMAGE		:=	sfe_image_cpy.c \
 					sfe_xpm_file_to_image.c
 SRCS_PIXEL		:=	sfe_pixel_area_cpy.c \
 					sfe_pixel_cpy.c \
+					sfe_pixel_fill.c \
 					sfe_pixel_iter.c \
 					sfe_pixel_put.c
-SRCS_SCENE		:=
+SRCS_SCENE		:=	sfe_scene_new.c \
+					sfe_scene_setbg.c \
+					sfe_scene_setfct.c
 SRCS_WINDOW		:=	sfe_window_new.c \
 					sfe_window_put_image.c \
+					sfe_window_put_scene.c \
 					sfe_window_update.c
 SRCS			:=	$(addprefix ${SRCS_PATH}/color/, ${SRCS_COLOR})
 SRCS			+=	$(addprefix ${SRCS_PATH}/engine/, ${SRCS_ENGINE})
