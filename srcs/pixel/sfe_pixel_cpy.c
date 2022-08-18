@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 22:51:54 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:54:51 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/18 18:36:40 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 t_bool	sfe_pixel_cpy(t_img src, t_point p_src, t_img dst, t_point p_dst)
 {
 	t_color	pixel_color;
-	
+
 	if (!src.img || !dst.img)
 		return (false);
 	if (!issmaller_point(p_src, src.size) || !issmaller_point(p_dst, dst.size))
