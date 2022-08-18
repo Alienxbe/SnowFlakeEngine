@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_pixel_iter.c                                   :+:      :+:    :+:   */
+/*   t_window.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 01:52:37 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:56:33 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/18 11:20:34 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/18 12:58:49 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_pixel.h"
+#ifndef T_WINDOW_H
+# define T_WINDOW_H
 
-t_bool	ft_pixel_iter(t_img img, t_bool (*f)(t_img, t_point))
+# include "ft_point.h"
+# include "t_img.h"
+
+typedef struct s_window
 {
-	t_bool	ret;
-	t_point	i;
+	void		*win_ptr;
+	const char	*name;
+	t_point		size;
+	t_img		img;
+}	t_window;
 
-	if (!img.img || !f)
-		return (false);
-	ret = true;
-	i.y = -1;
-	while (++i.y < img.size.y)
-	{
-		i.x = -1;
-		while (++i.x < img.size.x)
-			if (!f(img, i))
-				ret = false;
-	}
-	return (ret);
-}
+#endif

@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_xpm_file_to_image.c                            :+:      :+:    :+:   */
+/*   t_scene.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 22:15:17 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:49:26 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/18 12:40:17 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/18 12:40:52 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_image.h"
-#include "ft_memory.h"
-#include "mlx.h"
+#ifndef T_SCENE_H
+# define T_SCENE_H
 
-t_img	sfe_xpm_file_to_image(void *mlx_ptr, char *filename)
+typedef struct s_scene
 {
 	t_img	img;
+	int		(*f_init)();
+	int		(*f_update)();
+	void	*param;
+}	t_scene;
 
-	ft_bzero(&img, sizeof(img));
-	if (!mlx_ptr)
-		return (img);
-	img.img = mlx_xpm_file_to_image(mlx_ptr, filename, &img.size.x,
-			&img.size.y);
-	if (!img.img)
-		return (img);
-	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length,
-			&img.endian);
-	return (img);
-}
+#endif

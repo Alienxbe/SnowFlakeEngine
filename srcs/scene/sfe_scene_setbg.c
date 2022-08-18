@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_xpm_file_to_image.c                            :+:      :+:    :+:   */
+/*   sfe_scene_setbg.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 22:15:17 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:49:26 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/12 06:49:45 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/18 13:04:14 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_image.h"
-#include "ft_memory.h"
-#include "mlx.h"
+#include "sfe_scene.h"
+#include "sfe_pixel.h"
 
-t_img	sfe_xpm_file_to_image(void *mlx_ptr, char *filename)
+t_bool	sfe_scene_setbg(t_scene scene, t_color c)
 {
-	t_img	img;
-
-	ft_bzero(&img, sizeof(img));
-	if (!mlx_ptr)
-		return (img);
-	img.img = mlx_xpm_file_to_image(mlx_ptr, filename, &img.size.x,
-			&img.size.y);
-	if (!img.img)
-		return (img);
-	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length,
-			&img.endian);
-	return (img);
+	return (sfe_pixel_fill(scene.img, size_to_area(scene.img.size), c));
 }

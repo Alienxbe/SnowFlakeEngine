@@ -6,7 +6,7 @@
 #    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2022/08/17 18:23:58 by mykman           ###   ########.fr        #
+#    Updated: 2022/08/18 12:38:46 by mykman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,9 @@ SRCS_PIXEL		:=	sfe_pixel_area_cpy.c \
 					sfe_pixel_iter.c \
 					sfe_pixel_put.c
 SRCS_SCENE		:=
-SRCS_WINDOW		:=
+SRCS_WINDOW		:=	sfe_window_new.c \
+					sfe_window_put_image.c \
+					sfe_window_update.c
 SRCS			:=	$(addprefix ${SRCS_PATH}/color/, ${SRCS_COLOR})
 SRCS			+=	$(addprefix ${SRCS_PATH}/engine/, ${SRCS_ENGINE})
 SRCS			+=	$(addprefix ${SRCS_PATH}/image/, ${SRCS_IMAGE})

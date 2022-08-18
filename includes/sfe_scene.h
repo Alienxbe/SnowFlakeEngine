@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_pixel_iter.c                                   :+:      :+:    :+:   */
+/*   sfe_scene.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 01:52:37 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:56:33 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/18 12:41:44 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/18 12:59:52 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_pixel.h"
+#ifndef SFE_SCENE_H
+# define SFE_SCENE_H
 
-t_bool	ft_pixel_iter(t_img img, t_bool (*f)(t_img, t_point))
-{
-	t_bool	ret;
-	t_point	i;
+# include "t_scene.h"
+# include "t_color.h"
 
-	if (!img.img || !f)
-		return (false);
-	ret = true;
-	i.y = -1;
-	while (++i.y < img.size.y)
-	{
-		i.x = -1;
-		while (++i.x < img.size.x)
-			if (!f(img, i))
-				ret = false;
-	}
-	return (ret);
-}
+# include "ft_point.h"
+
+t_scene	sfe_scene_new(void *mlx_ptr, t_point size);
+t_bool	sfe_scene_setbg(t_scene scene, t_color c);
+
+#endif

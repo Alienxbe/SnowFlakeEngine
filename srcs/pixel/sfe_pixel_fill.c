@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 22:35:41 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/17 17:42:31 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/18 12:55:28 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_bool	sfe_pixel_fill(t_img img, t_area area, t_color color)
 	t_point	size;
 	t_point	i;
 
+	if (!img.img)
+		return (false);
 	size = area_to_size(area);
 	i.y = -1;
 	while (++i.y < size.y)

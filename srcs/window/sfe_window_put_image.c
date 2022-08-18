@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_xpm_file_to_image.c                            :+:      :+:    :+:   */
+/*   sfe_window_put_image.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 22:15:17 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:49:26 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/10 06:24:07 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/18 12:59:14 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_image.h"
-#include "ft_memory.h"
+#include "sfe_window.h"
 #include "mlx.h"
 
-t_img	sfe_xpm_file_to_image(void *mlx_ptr, char *filename)
+t_bool	sfe_window_put_image(void *mlx_ptr, t_window win, t_img img, t_point pos)
 {
-	t_img	img;
-
-	ft_bzero(&img, sizeof(img));
 	if (!mlx_ptr)
-		return (img);
-	img.img = mlx_xpm_file_to_image(mlx_ptr, filename, &img.size.x,
-			&img.size.y);
-	if (!img.img)
-		return (img);
-	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length,
-			&img.endian);
-	return (img);
+		return (false);
+	if (!issmaller_point(pos, win.size)
+		|| !issmaller_point(add_point(pos, img.size),
+			add_point(win.size, (t_point){1, 1}))
+		|| !isbigger_point(pos, (t_point){-1, -1}))
+		return (false);
+	mlx_put_image_to_window(mlx_ptr, win.win_ptr, img.img, pos.x, pos.y);
+	return (true);
 }

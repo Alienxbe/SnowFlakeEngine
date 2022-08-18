@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 15:33:45 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/17 17:32:37 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/18 12:51:17 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_bool	sfe_pixel_put(t_img img, t_point pos, t_color color)
 {
 	char	*dst;
 
+	if (!img.img)
+		return (false);
 	if (issmaller_point(pos, img.size)
 		&& isbigger_point(pos, (t_point){-1, -1}))
 	{

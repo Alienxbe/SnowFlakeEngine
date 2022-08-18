@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 23:01:10 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 10:10:33 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/18 13:05:32 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_bool	sf_color_replace(t_img img, t_color old, t_color new)
 	t_bool	ret;
 	t_point	i;
 
+	if (!img.img)
+		return (false);
 	ret = true;
 	i.y = -1;
 	while (++i.y < img.size.y)

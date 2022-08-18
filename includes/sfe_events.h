@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_xpm_file_to_image.c                            :+:      :+:    :+:   */
+/*   sfe_events.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 22:15:17 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:49:26 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/18 11:26:40 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/18 12:25:05 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_image.h"
-#include "ft_memory.h"
-#include "mlx.h"
+#ifndef SFE_EVENTS_H
+# define SFE_EVENTS_H
 
-t_img	sfe_xpm_file_to_image(void *mlx_ptr, char *filename)
+enum e_events
 {
-	t_img	img;
+	ON_KEYDOWN = 2,
+	ON_KEYUP,
+	ON_MOUSEDOWN,
+	ON_MOUSEUP,
+	ON_MOUSEMOVE,
+	ON_EXPOSE = 12,
+	ON_DESTROY = 17
+};
 
-	ft_bzero(&img, sizeof(img));
-	if (!mlx_ptr)
-		return (img);
-	img.img = mlx_xpm_file_to_image(mlx_ptr, filename, &img.size.x,
-			&img.size.y);
-	if (!img.img)
-		return (img);
-	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length,
-			&img.endian);
-	return (img);
-}
+#endif

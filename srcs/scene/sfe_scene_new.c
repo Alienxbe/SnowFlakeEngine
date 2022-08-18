@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_xpm_file_to_image.c                            :+:      :+:    :+:   */
+/*   sfe_scene_new.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 22:15:17 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 12:49:26 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/12 02:06:35 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/18 13:03:33 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "sfe_scene.h"
 #include "sfe_image.h"
-#include "ft_memory.h"
-#include "mlx.h"
 
-t_img	sfe_xpm_file_to_image(void *mlx_ptr, char *filename)
+t_scene	new_scene(void *mlx_ptr, t_point size)
 {
-	t_img	img;
+	t_scene	scene;
 
-	ft_bzero(&img, sizeof(img));
-	if (!mlx_ptr)
-		return (img);
-	img.img = mlx_xpm_file_to_image(mlx_ptr, filename, &img.size.x,
-			&img.size.y);
-	if (!img.img)
-		return (img);
-	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length,
-			&img.endian);
-	return (img);
+	ft_bzero(&scene, sizeof(scene));
+	scene.img = sfe_image_new(mlx_ptr, size, 0);
+	if (!scene.img.img)
+		return (scene);
+	return (scene);
 }

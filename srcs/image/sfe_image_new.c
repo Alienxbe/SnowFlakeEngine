@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 16:08:32 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/17 18:23:33 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/18 12:48:35 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_img	sfe_image_new(void *mlx_ptr, t_point size, t_color bg)
 	t_img	img;
 
 	ft_bzero(&img, sizeof(img));
+	if (!mlx_ptr)
+		return (img);
 	img.img = mlx_new_image(mlx_ptr, size.x, size.y);
 	if (!img.img)
 		return (img);
