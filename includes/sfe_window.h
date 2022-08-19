@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 11:22:57 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/19 20:59:37 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/19 22:23:01 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ t_bool		sfe_window_put_image(t_window win, t_img img,
 				t_point pos);
 t_bool		sfe_window_put_scene(t_window win, t_scene scene);
 void		sfe_window_update(t_window window);
+void		sfe_window_destroy(t_window win);
 
 #endif

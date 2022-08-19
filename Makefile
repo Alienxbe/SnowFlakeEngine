@@ -6,7 +6,7 @@
 #    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2022/08/19 21:03:43 by mykman           ###   ########.fr        #
+#    Updated: 2022/08/20 00:14:26 by mykman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ LIBS			:=	-L ${LIBFT_FOLDER} -lft \
 SRCS_COLOR		:=	sfe_color_get.c \
 					sfe_color_replace.c
 SRCS_CORE		:=	sfe_destroy.c \
+					sfe_hook.c \
 					sfe_init.c
 SRCS_IMAGE		:=	sfe_image_cpy.c \
 					sfe_image_destroy.c \
@@ -55,7 +56,8 @@ SRCS_PIXEL		:=	sfe_pixel_area_cpy.c \
 SRCS_SCENE		:=	sfe_scene_new.c \
 					sfe_scene_setbg.c \
 					sfe_scene_setfct.c
-SRCS_WINDOW		:=	sfe_window_new.c \
+SRCS_WINDOW		:=	sfe_window_destroy.c \
+					sfe_window_new.c \
 					sfe_window_put_image.c \
 					sfe_window_put_scene.c \
 					sfe_window_update.c
