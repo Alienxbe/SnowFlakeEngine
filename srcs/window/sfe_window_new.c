@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 06:14:52 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 14:28:57 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/19 20:59:45 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 #include "mlx.h"
 #include <stddef.h>
 
-t_window	sfe_window_new(void *mlx_ptr, t_point size, char *name, int (*f)())
+t_window	sfe_window_new(void *mlx_ptr, t_point size, const char *name,
+				int (*f)())
 {
 	t_window	win;
 
 	if (!mlx_ptr)
 		return ((t_window){0});
 	win.mlx_ptr = mlx_ptr;
-	win.win_ptr = mlx_new_window(mlx_ptr, size.x, size.y, name);
+	win.win_ptr = mlx_new_window(mlx_ptr, size.x, size.y, (char *)name);
 	if (!win.win_ptr)
 		return ((t_window){0});
 	win.img = sfe_image_new(mlx_ptr, size, 0xFF000000);

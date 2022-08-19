@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_image.h                                        :+:      :+:    :+:   */
+/*   sfe_image_destroy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 17:29:37 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/19 20:56:29 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/19 20:54:11 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/19 21:00:01 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SFE_IMAGE_H
-# define SFE_IMAGE_H
+#include "sfe_image.h"
+#include "mlx.h"
+#include <stdlib.h>
 
-# include "t_img.h"
-# include "t_color.h"
-
-# include "ft_point.h"
-# include "ft_area.h"
-# include "ft_bool.h"
-
-t_img	sfe_image_new(void *mlx_ptr, t_point size, t_color bg);
-t_img	sfe_image_sub(void *mlx_ptr, t_img img, t_area area);
-t_bool	sfe_image_cpy(t_img src, t_img dst, t_point p_dst);
-void	sfe_image_destroy(void *mlx_ptr, t_img img);
-
-#endif
+void	sfe_image_destroy(void *mlx_ptr, t_img img)
+{
+	mlx_destroy_image(mlx_ptr, img.img);
+}

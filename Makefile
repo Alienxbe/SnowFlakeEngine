@@ -6,7 +6,7 @@
 #    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2022/08/18 14:31:42 by mykman           ###   ########.fr        #
+#    Updated: 2022/08/19 21:03:43 by mykman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,10 @@ LIBS			:=	-L ${LIBFT_FOLDER} -lft \
 
 SRCS_COLOR		:=	sfe_color_get.c \
 					sfe_color_replace.c
-SRCS_ENGINE		:=
+SRCS_CORE		:=	sfe_destroy.c \
+					sfe_init.c
 SRCS_IMAGE		:=	sfe_image_cpy.c \
+					sfe_image_destroy.c \
 					sfe_image_new.c \
 					sfe_image_sub.c \
 					sfe_xpm_file_to_image.c
@@ -58,7 +60,7 @@ SRCS_WINDOW		:=	sfe_window_new.c \
 					sfe_window_put_scene.c \
 					sfe_window_update.c
 SRCS			:=	$(addprefix ${SRCS_PATH}/color/, ${SRCS_COLOR})
-SRCS			+=	$(addprefix ${SRCS_PATH}/engine/, ${SRCS_ENGINE})
+SRCS			+=	$(addprefix ${SRCS_PATH}/core/, ${SRCS_CORE})
 SRCS			+=	$(addprefix ${SRCS_PATH}/image/, ${SRCS_IMAGE})
 SRCS			+=	$(addprefix ${SRCS_PATH}/pixel/, ${SRCS_PIXEL})
 SRCS			+=	$(addprefix ${SRCS_PATH}/scene/, ${SRCS_SCENE})
