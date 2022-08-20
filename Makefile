@@ -6,7 +6,7 @@
 #    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2022/08/20 00:14:26 by mykman           ###   ########.fr        #
+#    Updated: 2022/08/20 09:50:02 by mykman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,9 @@ SRCS_COLOR		:=	sfe_color_get.c \
 					sfe_color_replace.c
 SRCS_CORE		:=	sfe_destroy.c \
 					sfe_hook.c \
-					sfe_init.c
+					sfe_init.c \
+					sfe_set_active_scene.c
+SRCS_EVENT		:=	sfe_event_hook.c
 SRCS_IMAGE		:=	sfe_image_cpy.c \
 					sfe_image_destroy.c \
 					sfe_image_new.c \
@@ -54,8 +56,7 @@ SRCS_PIXEL		:=	sfe_pixel_area_cpy.c \
 					sfe_pixel_iter.c \
 					sfe_pixel_put.c
 SRCS_SCENE		:=	sfe_scene_new.c \
-					sfe_scene_setbg.c \
-					sfe_scene_setfct.c
+					sfe_scene_setbg.c
 SRCS_WINDOW		:=	sfe_window_destroy.c \
 					sfe_window_new.c \
 					sfe_window_put_image.c \
@@ -63,6 +64,7 @@ SRCS_WINDOW		:=	sfe_window_destroy.c \
 					sfe_window_update.c
 SRCS			:=	$(addprefix ${SRCS_PATH}/color/, ${SRCS_COLOR})
 SRCS			+=	$(addprefix ${SRCS_PATH}/core/, ${SRCS_CORE})
+SRCS			+=	$(addprefix ${SRCS_PATH}/event/, ${SRCS_EVENT})
 SRCS			+=	$(addprefix ${SRCS_PATH}/image/, ${SRCS_IMAGE})
 SRCS			+=	$(addprefix ${SRCS_PATH}/pixel/, ${SRCS_PIXEL})
 SRCS			+=	$(addprefix ${SRCS_PATH}/scene/, ${SRCS_SCENE})

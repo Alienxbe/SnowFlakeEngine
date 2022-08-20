@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_scene_setfct.c                                 :+:      :+:    :+:   */
+/*   sfe_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 13:00:38 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 14:15:09 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/20 00:07:22 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/20 09:25:26 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_scene.h"
+#include "t_window.h"
+#include "mlx.h"
 
-void	sfe_scene_setfct(t_scene *scene, int (*f_init)(), int (*f_update)(),
-			void *param)
+void	sfe_event_hook(t_window win, int event, int (*f)(), void *param)
 {
-	scene->f_init = f_init;
-	scene->f_update = f_update;
-	scene->param = param;
+	if (win.win_ptr && f)
+		mlx_hook(win.win_ptr, event, 0, f, param);
 }

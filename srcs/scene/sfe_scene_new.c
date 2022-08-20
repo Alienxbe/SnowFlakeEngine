@@ -6,21 +6,24 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 02:06:35 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 14:33:53 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/20 09:40:14 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_scene.h"
-#include "sfe_image.h"
-#include "ft_memory.h"
+#include "t_scene.h"
+#include "ft_point.h"
 
-t_scene	sfe_scene_new(void *mlx_ptr, t_point size)
+t_scene	sfe_scene_new(t_img *img, int (*f_init)(), int (*f_update)(),
+			void *param)
 {
 	t_scene	scene;
 
-	ft_bzero(&scene, sizeof(scene));
-	scene.img = sfe_image_new(mlx_ptr, size, 0);
-	if (!scene.img.img)
-		return (scene);
+	if (!img || !img->img)
+		return ((t_scene){0});
+	scene.img = img;
+	scene.size = scene.img->size;
+	scene.param = param;
+	scene.f_init = f_init;
+	scene.f_update = f_update;
 	return (scene);
 }

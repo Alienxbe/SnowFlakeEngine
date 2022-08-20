@@ -6,12 +6,12 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 06:14:52 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/20 00:15:37 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/20 09:30:26 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "t_events.h"
 #include "sfe_window.h"
-#include "sfe_events.h"
 #include "sfe_image.h"
 #include "mlx.h"
 #include <stddef.h>

@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 12:41:44 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 14:35:09 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/20 09:42:44 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 
 # include "ft_point.h"
 
-t_scene	sfe_scene_new(void *mlx_ptr, t_point size);
-t_bool	sfe_scene_setbg(t_scene scene, t_color c);
-void	sfe_scene_setfct(t_scene *scene, int (*f_init)(), int (*f_update)(),
+t_scene	sfe_scene_new(t_img *img, int (*f_init)(), int (*f_update)(),
 			void *param);
+t_bool	sfe_scene_setbg(t_scene scene, t_color c);
 
 #endif

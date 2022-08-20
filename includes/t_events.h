@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_window_put_scene.c                             :+:      :+:    :+:   */
+/*   t_events.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 14:23:26 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/20 09:50:33 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/20 09:22:32 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/20 09:24:00 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_window.h"
+#ifndef T_EVENTS_H
+# define T_EVENTS_H
 
-t_bool	sfe_window_put_scene(t_window win, t_scene scene)
+typedef enum e_events
 {
-	if (!scene.img)
-		return (false);
-	return (sfe_window_put_image(win, *scene.img, new_point(0, 0)));
-}
+	ON_KEYDOWN = 2,
+	ON_KEYUP,
+	ON_MOUSEDOWN,
+	ON_MOUSEUP,
+	ON_MOUSEMOVE,
+	ON_EXPOSE = 12,
+	ON_DESTROY = 17
+}	t_events;
+
+#endif

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_window_put_scene.c                             :+:      :+:    :+:   */
+/*   sfe_set_active_scene.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 14:23:26 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/20 09:50:33 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/20 09:44:34 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/20 10:22:04 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sfe_window.h"
+#include "t_sfe.h"
 
-t_bool	sfe_window_put_scene(t_window win, t_scene scene)
+void	sfe_set_active_scene(t_sfe *sfe, t_scene *scene)
 {
-	if (!scene.img)
-		return (false);
-	return (sfe_window_put_image(win, *scene.img, new_point(0, 0)));
+	if (sfe && scene)
+	{
+		sfe->active_scene = scene;
+		if (sfe->active_scene->f_init)
+			sfe->active_scene->f_init(sfe->active_scene->param);
+	}
 }
