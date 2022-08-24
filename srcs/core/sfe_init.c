@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 18:30:58 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/20 10:22:48 by mykman           ###   ########.fr       */
+/*   Updated: 2022/08/20 19:35:39 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ t_sfe	*sfe_init(const char *name, t_point size)
 	sfe->mlx_ptr = mlx_init();
 	sfe->win = sfe_window_new(sfe->mlx_ptr, size, name, NULL);
 	sfe->fps_max = SFE_DEFAULT_FPS_MAX;
+	sfe->fps = sfe->fps_max;
 	sfe_hook(sfe, ON_DESTROY, &sfe_exit, sfe);
 	if (!sfe->mlx_ptr || !sfe->win.win_ptr)
 	{
