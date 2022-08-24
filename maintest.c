@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_scene.h                                          :+:      :+:    :+:   */
+/*   maintest.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 12:40:17 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/20 17:31:52 by mykman           ###   ########.fr       */
+/*   Created: 2022/08/24 02:08:24 by mykman            #+#    #+#             */
+/*   Updated: 2022/08/24 02:23:27 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_SCENE_H
-# define T_SCENE_H
+#include <stdio.h>
+#include <time.h>
+#include <unistd.h>
 
-# include "t_img.h"
-# include "ft_point.h"
+#define T_SEC	1000000
 
-typedef struct s_sfe	t_sfe;
-
-typedef struct s_scene
+int	main(void)
 {
-	t_img	*img;
-	t_point	size;
-	void	*param;
-	t_sfe	*sfe;
-	int		(*f_init)();
-	int		(*f_update)();
-}	t_scene;
+	double	pxs;
+	double	ips;
+	double	pxi;
+	double	pos;
 
-#endif
+	pxs = 2;
+	ips = (double)1 / (double)239;
+	pxi = pxs * ips;
+	pos = 0;
+	while (1)
+	{
+		printf("%f | %f | %f | %d\n", ips, pos, pxi, (int)pos);
+		pos += pxi;
+		usleep(T_SEC / 239);
+	}
+}
