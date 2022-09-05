@@ -51,6 +51,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+.vscode/
+a.out*
+
 Libft
 minilibx
 main.c
