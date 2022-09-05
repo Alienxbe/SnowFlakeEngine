@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sfe_move.c                                         :+:      :+:    :+:   */
+/*   sfe_set_max_fps.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 13:12:15 by mykman            #+#    #+#             */
-/*   Updated: 2022/09/05 14:25:06 by mykman           ###   ########.fr       */
+/*   Created: 2022/09/05 13:56:39 by mykman            #+#    #+#             */
+/*   Updated: 2022/09/05 14:24:42 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "t_sfe.h"
 
-void	sfe_move(t_sfe *sfe, t_point *pos, t_point speed)
+void	sfe_set_max_fps(t_sfe *sfe, unsigned int fps)
 {
-	(void)sfe;
-	*pos = add_point(*pos, speed);
+	sfe->fps_max = fps;
 }
