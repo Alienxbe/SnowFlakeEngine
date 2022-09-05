@@ -6,7 +6,7 @@
 #    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2022/09/05 13:13:47 by mykman           ###   ########.fr        #
+#    Updated: 2022/09/05 16:15:33 by mykman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS_COLOR		:=	sfe_color_get.c \
 SRCS_CORE		:=	sfe_destroy.c \
 					sfe_hook.c \
 					sfe_init.c \
+					sfe_loop.c \
 					sfe_move.c \
 					sfe_set_active_scene.c
 SRCS_EVENT		:=	sfe_event_hook.c

@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 18:30:58 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/20 19:35:39 by mykman           ###   ########.fr       */
+/*   Updated: 2022/09/05 16:16:30 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ static int	_update(t_sfe *sfe)
 	update_time = clock();
 	if (sfe->active_scene)
 	{
-		if (sfe->active_scene->f_update &&
-			!sfe->active_scene->f_update(sfe->active_scene->param))
+		if (sfe->active_scene->f_update
+			&& !sfe->active_scene->f_update(sfe->active_scene->param))
 			sfe_exit(sfe);
 		sfe_window_update(sfe->win);
 	}
