@@ -6,7 +6,7 @@
 #    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2022/09/05 16:39:19 by mykman           ###   ########.fr        #
+#    Updated: 2022/10/07 14:34:11 by mykman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,12 +35,11 @@ MLX_FOLDER		:=	minilibx
 INCLUDES		:=	-I./includes \
 					-I ${LIBFT_FOLDER}/includes \
 					-I ${MLX_FOLDER}/includes
-LIBS			:=	-L ${LIBFT_FOLDER} -lft \
-					-L ${MLX_FOLDER} -lmlx
 
 SRCS_COLOR		:=	sfe_color_get.c \
 					sfe_color_replace.c
 SRCS_CORE		:=	sfe_destroy.c \
+					sfe_exit.c \
 					sfe_hook.c \
 					sfe_init.c \
 					sfe_loop.c \

@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 18:30:58 by mykman            #+#    #+#             */
-/*   Updated: 2022/09/05 16:16:30 by mykman           ###   ########.fr       */
+/*   Updated: 2022/10/05 08:53:09 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <time.h>
-
-static int	sfe_exit(t_sfe *sfe)
-{
-	ft_printf("closing window...\n");
-	sfe_destroy(sfe);
-	exit(EXIT_SUCCESS);
-}
 
 static int	limit_fps(unsigned int frame_rendering_time, unsigned int fps_max)
 {
