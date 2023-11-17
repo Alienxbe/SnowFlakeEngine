@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sfe_event.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 11:26:40 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/20 09:28:50 by mykman           ###   ########.fr       */
+/*   Updated: 2023/11/17 18:58:59 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SFE_EVENTS_H
-# define SFE_EVENTS_H
+#ifndef SFE_EVENT_H
+# define SFE_EVENT_H
 
 # include "t_sfe.h"
 # include "t_events.h"

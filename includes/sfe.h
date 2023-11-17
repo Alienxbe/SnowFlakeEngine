@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sfe.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 00:26:06 by mykman            #+#    #+#             */
-/*   Updated: 2022/10/05 09:02:13 by mykman           ###   ########.fr       */
+/*   Updated: 2023/11/17 18:59:18 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sfe_destroy(t_sfe *sfe);
 
 // Scene functions
 t_scene	sfe_new_scene(t_sfe *sfe, int (*f_init)(), int (*f_update)(),
-	void *param);
+			void *param);
 
 // Function not yet fully implemented should not use
 void	sfe_move(t_sfe *sfe, t_point *pos, t_point speed);
