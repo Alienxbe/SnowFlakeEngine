@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 00:26:06 by mykman            #+#    #+#             */
-/*   Updated: 2023/11/17 18:59:18 by marykman         ###   ########.fr       */
+/*   Updated: 2023/11/22 23:48:21 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int		sfe_exit(t_sfe *sfe);
 void	sfe_destroy(t_sfe *sfe);
 
 // Scene functions
-t_scene	sfe_new_scene(t_sfe *sfe, int (*f_init)(), int (*f_update)(),
-			void *param);
+t_scene	sfe_new_scene(t_sfe *sfe, void *param);
 
 // Function not yet fully implemented should not use
 void	sfe_move(t_sfe *sfe, t_point *pos, t_point speed);
