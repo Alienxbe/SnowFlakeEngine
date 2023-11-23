@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mykman <mykman@student.s19.be>             +#+  +:+       +#+         #
+#    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2022/10/07 14:34:11 by mykman           ###   ########.fr        #
+#    Updated: 2023/11/23 01:06:05 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,8 @@ SRCS_EVENT		:=	sfe_event_hook.c
 SRCS_IMAGE		:=	sfe_image_cpy.c \
 					sfe_image_destroy.c \
 					sfe_image_new.c \
+					sfe_image_resize.c \
+					sfe_image_reverse.c \
 					sfe_image_sub.c \
 					sfe_xpm_file_to_image.c
 SRCS_PIXEL		:=	sfe_pixel_area_cpy.c \
