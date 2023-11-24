@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 00:07:02 by marykman          #+#    #+#             */
-/*   Updated: 2023/11/23 01:19:27 by marykman         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:00:00 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_img	sfe_image_resize(void *mlx_ptr, t_img img, t_point new_size)
 	t_img	new;
 	t_point	i;
 
-	new = sfe_image_new(mlx_ptr, new_size, 0);
+	new = sfe_image_new(mlx_ptr, new_size, 0xFF000000);
 	if (!new.img)
 		return (new);
 	i.x = -1;
