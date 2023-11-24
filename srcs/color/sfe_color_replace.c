@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   sfe_color_replace.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 23:01:10 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 13:05:32 by mykman           ###   ########.fr       */
+/*   Updated: 2023/11/24 11:44:30 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sfe_color.h"
 #include "sfe_pixel.h"
 
-t_bool	sf_color_replace(t_img img, t_color old, t_color new)
+t_bool	sfe_color_replace(t_img img, t_color old, t_color new)
 {
 	t_bool	ret;
 	t_point	i;
