@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2023/11/23 01:06:05 by marykman         ###   ########.fr        #
+#    Updated: 2023/11/30 18:30:20 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,9 @@ SRCS_CORE		:=	sfe_destroy.c \
 					sfe_new_scene.c \
 					sfe_set_active_scene.c \
 					sfe_set_max_fps.c
-SRCS_EVENT		:=	sfe_event_hook.c
+SRCS_EVENT		:=	sfe_event_hook.c \
+					sfe_hook_on_keydown.c \
+					sfe_hook_on_keyup.c
 SRCS_IMAGE		:=	sfe_image_cpy.c \
 					sfe_image_destroy.c \
 					sfe_image_new.c \
