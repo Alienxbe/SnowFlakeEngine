@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sfe_image_destroy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:54:11 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/19 22:19:48 by mykman           ###   ########.fr       */
+/*   Updated: 2023/12/12 10:30:03 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,8 @@
 void	sfe_image_destroy(void *mlx_ptr, t_img img)
 {
 	if (mlx_ptr && img.img)
+	{
 		mlx_destroy_image(mlx_ptr, img.img);
+		img.img = NULL;
+	}
 }
