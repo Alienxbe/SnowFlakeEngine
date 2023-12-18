@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 17:32:54 by marykman          #+#    #+#             */
-/*   Updated: 2023/11/30 17:34:56 by marykman         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:23:11 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@
 void	sfe_hook_on_keydown(t_window win, int (*f)(), void *param)
 {
 	if (win.win_ptr && f)
-		mlx_hook(win.win_ptr, ON_KEYDOWN, (1L<<0), f, param);
+		mlx_hook(win.win_ptr, ON_KEYDOWN, (1L << 0), f, param);
 }
