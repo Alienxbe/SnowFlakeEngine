@@ -6,14 +6,14 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 20:53:57 by marykman          #+#    #+#             */
-/*   Updated: 2023/12/21 19:27:06 by marykman         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:36:36 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sfe_image.h"
 #include "sfe_pixel.h"
 
-t_point	no_mod(t_point src_size, t_point i)
+static t_point	no_mod(t_point src_size, t_point i)
 {
 	(void)src_size;
 	return (i);
