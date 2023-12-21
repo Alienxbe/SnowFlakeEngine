@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2023/12/18 14:47:36 by marykman         ###   ########.fr        #
+#    Updated: 2023/12/21 19:28:23 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRCS_EVENT		:=	sfe_event_hook.c \
 					sfe_hook_on_keyup.c
 SRCS_IMAGE		:=	sfe_image_cpy.c \
 					sfe_image_destroy.c \
+					sfe_image_mod_cpy.c \
 					sfe_image_new.c \
 					sfe_image_resize.c \
 					sfe_image_reverse.c \

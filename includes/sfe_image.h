@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:29:37 by mykman            #+#    #+#             */
-/*   Updated: 2023/12/18 17:47:07 by marykman         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:27:52 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "sfe.h"
 
 typedef t_img	(*t_filter)(t_sfe *sfe, t_img img, size_t i);
+typedef t_point	(*t_mod)(t_point player, t_point i);
 
 t_img	sfe_image_new(void *mlx_ptr, t_point size, t_color bg);
 t_img	sfe_image_sub(void *mlx_ptr, t_img img, t_area area);
