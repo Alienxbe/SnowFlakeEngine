@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2023/12/21 19:28:23 by marykman         ###   ########.fr        #
+#    Updated: 2023/12/24 00:37:00 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ MLX_FOLDER		:=	minilibx
 # Files
 INCLUDES		:=	-I./includes \
 					-I ${LIBFT_FOLDER}/includes \
-					-I ${MLX_FOLDER}/includes
+					-I ${MLX_FOLDER}
 
 SRCS_COLOR		:=	sfe_color_get.c \
 					sfe_color_replace.c
