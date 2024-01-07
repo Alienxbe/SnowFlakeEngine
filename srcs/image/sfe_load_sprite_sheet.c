@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 18:15:35 by marykman          #+#    #+#             */
-/*   Updated: 2023/12/18 17:47:25 by marykman         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:46:57 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ static t_area	get_cpy_area(t_point sprite_size, t_point sprite_dim, size_t i)
 	return (area);
 }
 
-static void	apply_filter(t_sfe *sfe, t_img *sprites, size_t i, t_filter filter)
+static void	apply_filter(t_sfe *sfe, t_img *sprites, size_t i,
+				t_img (*filter)(t_sfe *sfe, t_img *img, size_t i))
 {
 	if (filter && sprites[i].img)
-		sprites[i] = filter(sfe, sprites[i], i);
+		sprites[i] = filter(sfe, sprites + i, i);
 }
 
 static t_img	*free_all(t_sfe *sfe, t_img *sprites, t_img sheet, t_img *ret)
@@ -48,15 +49,16 @@ static t_img	*free_all(t_sfe *sfe, t_img *sprites, t_img sheet, t_img *ret)
 	{
 		i = 0;
 		while (sprites[i].img)
-			sfe_image_destroy(sfe->mlx_ptr, sprites[i++]);
+			sfe_image_destroy(sfe->mlx_ptr, sprites + i++);
 		free(sprites);
 	}
-	sfe_image_destroy(sfe->mlx_ptr, sheet);
+	sfe_image_destroy(sfe->mlx_ptr, &sheet);
 	return (ret);
 }
 
-t_img	*sfe_load_sprite_sheet(t_sfe *sfe, char *filename, t_point sprite_size,
-			t_filter filter)
+t_img	*sfe_load_sprite_sheet(t_sfe *sfe, char const *filename,
+			t_point sprite_size,
+			t_img (*filter)(t_sfe *sfe, t_img *img, size_t i))
 {
 	t_img	sheet;
 	t_img	*sprites;
@@ -75,12 +77,12 @@ t_img	*sfe_load_sprite_sheet(t_sfe *sfe, char *filename, t_point sprite_size,
 	i = -1;
 	while (++i < sprite_count)
 	{
-		sprites[i] = sfe_image_sub(sfe->mlx_ptr, sheet,
+		sprites[i] = sfe_image_sub(sfe->mlx_ptr, &sheet,
 				get_cpy_area(sprite_size, sprite_dim, i));
 		apply_filter(sfe, sprites, i, filter);
 		if (!sprites[i].img)
 			return (free_all(sfe, sprites, sheet, NULL));
 	}
-	sfe_image_destroy(sfe->mlx_ptr, sheet);
+	sfe_image_destroy(sfe->mlx_ptr, &sheet);
 	return (sprites);
 }

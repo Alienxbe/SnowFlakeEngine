@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:52:08 by mykman            #+#    #+#             */
-/*   Updated: 2023/12/12 10:35:50 by marykman         ###   ########.fr       */
+/*   Updated: 2024/01/07 13:53:59 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sfe_destroy(t_sfe *sfe)
 		return ;
 	if (sfe->active_scene && sfe->active_scene->f_destroy)
 		sfe->active_scene->f_destroy(sfe->active_scene->param);
-	sfe_window_destroy(sfe->win);
+	sfe_window_destroy(&sfe->win);
 	free(sfe->mlx_ptr);
 	sfe->mlx_ptr = NULL;
 	free(sfe);

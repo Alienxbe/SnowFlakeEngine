@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   sfe_window_update.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 07:09:54 by mykman            #+#    #+#             */
-/*   Updated: 2022/08/18 14:30:12 by mykman           ###   ########.fr       */
+/*   Updated: 2024/01/07 13:53:29 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sfe_window.h"
 
-void	sfe_window_update(t_window window)
+void	sfe_window_update(t_window const *win)
 {
-	sfe_window_put_image(window, window.img, (t_point){0});
+	if (win)
+		sfe_window_put_image(win, win->img, (t_point){0});
 }

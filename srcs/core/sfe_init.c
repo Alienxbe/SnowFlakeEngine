@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sfe_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 18:30:58 by mykman            #+#    #+#             */
-/*   Updated: 2022/10/05 08:53:09 by mykman           ###   ########.fr       */
+/*   Updated: 2024/01/07 13:54:11 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	_update(t_sfe *sfe)
 		if (sfe->active_scene->f_update
 			&& !sfe->active_scene->f_update(sfe->active_scene->param))
 			sfe_exit(sfe);
-		sfe_window_update(sfe->win);
+		sfe_window_update(&sfe->win);
 	}
 	sfe->frame_rendering_time = clock() - update_time;
 	sfe->fps = limit_fps(sfe->frame_rendering_time, sfe->fps_max);

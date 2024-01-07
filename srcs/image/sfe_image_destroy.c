@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:54:11 by mykman            #+#    #+#             */
-/*   Updated: 2023/12/12 10:30:03 by marykman         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:48:39 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "mlx.h"
 #include <stdlib.h>
 
-void	sfe_image_destroy(void *mlx_ptr, t_img img)
+void	sfe_image_destroy(void *mlx_ptr, t_img *img)
 {
-	if (mlx_ptr && img.img)
+	if (mlx_ptr && img->img)
 	{
-		mlx_destroy_image(mlx_ptr, img.img);
-		img.img = NULL;
+		mlx_destroy_image(mlx_ptr, img->img);
+		img->img = NULL;
 	}
 }

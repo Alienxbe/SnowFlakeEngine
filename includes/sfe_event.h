@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 11:26:40 by mykman            #+#    #+#             */
-/*   Updated: 2023/11/30 17:37:56 by marykman         ###   ########.fr       */
+/*   Updated: 2024/01/07 11:50:47 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,8 +138,9 @@ typedef enum e_sfe_keys
 
 # endif
 
-void	sfe_event_hook(t_window win, int event, int (*f)(), void *param);
-void	sfe_hook_on_keydown(t_window win, int (*f)(), void *param);
-void	sfe_hook_on_keyup(t_window win, int (*f)(), void *param);
+void	sfe_event_hook(t_window const *win, int event,
+			int (*f)(), void *param);
+void	sfe_hook_on_keydown(t_window const *win, int (*f)(), void *param);
+void	sfe_hook_on_keyup(t_window const *win, int (*f)(), void *param);
 
 #endif
