@@ -6,7 +6,7 @@
 /*   By: marykman <marykman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 17:26:35 by mykman            #+#    #+#             */
-/*   Updated: 2024/01/07 13:56:55 by marykman         ###   ########.fr       */
+/*   Updated: 2025/10/23 17:27:42 by marykman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ t_bool	sfe_pixel_cpy(t_img const *src, t_point p_src, t_img *dst,
 t_bool	sfe_pixel_area_cpy(t_img const *src, t_area a_src, t_img *dst,
 			t_point p_dst);
 t_bool	sfe_pixel_iter(t_img *img, t_bool (*f)(t_img *, t_point));
+
+void	sfe_draw_line(t_img *img, t_point a, t_point b, t_color color);
 
 #endif

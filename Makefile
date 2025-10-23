@@ -6,7 +6,7 @@
 #    By: marykman <marykman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 00:02:10 by mykman            #+#    #+#              #
-#    Updated: 2023/12/24 00:37:00 by marykman         ###   ########.fr        #
+#    Updated: 2025/10/23 17:27:14 by marykman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,8 @@ SRCS_IMAGE		:=	sfe_image_cpy.c \
 					sfe_image_sub.c \
 					sfe_load_sprite_sheet.c \
 					sfe_xpm_file_to_image.c
-SRCS_PIXEL		:=	sfe_pixel_area_cpy.c \
+SRCS_PIXEL		:=	sfe_draw_line.c \
+					sfe_pixel_area_cpy.c \
 					sfe_pixel_cpy.c \
 					sfe_pixel_fill.c \
 					sfe_pixel_iter.c \
